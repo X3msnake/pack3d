@@ -11,9 +11,11 @@ import (
 	"github.com/fogleman/pack3d/binpack"
 )
 
-SizeX = 165
-SizeY = 165
-SizeZ = 320
+var (
+	SizeX = 165
+	SizeY = 165
+	SizeZ = 320
+)
 
 
 var Rotations []fauxgl.Matrix
