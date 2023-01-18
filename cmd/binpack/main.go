@@ -11,7 +11,7 @@ import (
 	"github.com/fogleman/pack3d/binpack"
 )
 
-var (
+const (
 	SizeX = 165
 	SizeY = 165
 	SizeZ = 320
