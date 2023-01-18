@@ -12,9 +12,9 @@ import (
 )
 
 const (
-	SizeX = 165
-	SizeY = 165
-	SizeZ = 320
+	SizeX int = 165
+	SizeY int = 165
+	SizeZ int = 320
 )
 
 var Rotations []fauxgl.Matrix
@@ -31,6 +31,16 @@ func init() {
 			}
 			Rotations = append(Rotations, m)
 		}
+	}
+	
+	if x := os.Getenv("SIZE_X"); x != "" {
+		SizeX = x
+	}
+	if y := os.Getenv("SIZE_Y"); y != "" {
+		SizeY = y
+	}
+	if z := os.Getenv("SIZE_Z"); z != "" {
+		SizeZ = z
 	}
 }
 
