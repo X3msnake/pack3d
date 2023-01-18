@@ -11,7 +11,7 @@ import (
 	"github.com/fogleman/pack3d/binpack"
 )
 
-const (
+var (
 	SizeX int = 165
 	SizeY int = 165
 	SizeZ int = 320
@@ -32,18 +32,27 @@ func init() {
 			Rotations = append(Rotations, m)
 		}
 	}
-	
+
 	if x := os.Getenv("SIZE_X"); x != "" {
+		x, err := strconv.Atoi(x)
+		if err != nil {
+			panic("SIZE_X is not an int")
+		}
 		SizeX = x
-		Printf(SizeX)
 	}
 	if y := os.Getenv("SIZE_Y"); y != "" {
+		y, err := strconv.Atoi(y)
+		if err != nil {
+			panic("SIZE_Y is not an int")
+		}
 		SizeY = y
-		Printf(SizeY)
 	}
 	if z := os.Getenv("SIZE_Z"); z != "" {
+		z, err := strconv.Atoi(z)
+		if err != nil {
+			panic("SIZE_Z is not an int")
+		}
 		SizeZ = z
-		Printf(SizeZ)
 	}
 }
 
