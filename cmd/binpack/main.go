@@ -35,12 +35,15 @@ func init() {
 	
 	if x := os.Getenv("SIZE_X"); x != "" {
 		SizeX = x
+		Printf(SizeX)
 	}
 	if y := os.Getenv("SIZE_Y"); y != "" {
 		SizeY = y
+		Printf(SizeY)
 	}
 	if z := os.Getenv("SIZE_Z"); z != "" {
 		SizeZ = z
+		Printf(SizeZ)
 	}
 }
 
