@@ -33,16 +33,6 @@ func init() {
 			Rotations = append(Rotations, m)
 		}
 	}
-	
-	if x := os.Getenv("SIZE_X"); x != "" {
-		SizeX = x
-	}
-	if y := os.Getenv("SIZE_Y"); y != "" {
-		SizeY = y
-	}
-	if z := os.Getenv("SIZE_Z"); z != "" {
-		SizeZ = z
-	}
 }
 
 func timed(name string) func() {
@@ -61,7 +51,17 @@ func main() {
 
 	var items []binpack.Item
 	var meshes []*fauxgl.Mesh
-
+	
+	if x := os.Getenv("SIZE_X"); x != "" {
+		SizeX = x
+	}
+	if y := os.Getenv("SIZE_Y"); y != "" {
+		SizeY = y
+	}
+	if z := os.Getenv("SIZE_Z"); z != "" {
+		SizeZ = z
+	}
+	
 	var done func()
 
 	score := 1
